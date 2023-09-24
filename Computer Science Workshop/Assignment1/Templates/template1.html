@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>FedEx</title>
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0px 0px;
+            padding: 15px;
+            overflow: hidden;
+            background-color: rgb(123, 0, 224);
+        }
+
+        body {
+            background-image: url(https://wallpaperaccess.com/full/4008262.jpg);
+            background-repeat: no-repeat;
+            background-size: 1400px;
+        }
+
+        li {
+            float: left;
+
+        }
+        form.t{
+            text-align: center;
+            font-size:large;
+
+        }
+
+            li a {
+                display: block;
+                color: rgb(255, 155, 6);
+                padding: 7px 60px;
+
+            }
+
+            div1 {
+                background-color: lavender;
+                width: 250px;
+                padding: 50px;
+                margin: 20px;
+            }
+
+            h1 {
+                font-size: 50px;
+                text-align: center;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+            }
+
+            li div:hover {
+                background-color: mediumturquoise;
+                color:rgb(19, 168, 255);
+            }
+             li a:hover {
+                    background-color: rgb(98, 0, 255);
+                    color: crimson
+                }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li><img src="https://www.fedex.com/content/dam/fedex-com/logos/logo.png" style="width:80px;height:30px"></li>
+        <li><a class="active" href=“https://aiimsbhubaneswar.nic.in/”>Shipping</a></li>
+        <li><a class="active" href=“aboutus.html”>Tracking</a></li>
+        <li><a class="active" href=“facilities.html”>Design and Print</a></li>
+        <li><a class="active" href=“doctors.html”>Locations</a></li>
+        <li><a class="active" href=“registration.html”>Support</a></li>
+        <li><a class="active" href=“contactus.html”>Sign up or Login</a></li>
+    </ul>
+    <h1 style="color:orangered;">Ship, Manage, Track, Deliver</h1>
+    <ul>
+        <li>
+            <div1>Rate and Ship </div1>
+        </li>
+        <li>
+            <div1>Track </div1>
+        </li>
+        <li>
+            <div1>Locations </div1>
+        </li>
+    </ul>
+    <div class="t">
+        <form action="/action_page.php">
+            <input type="text" placeholder="Search.." name="search">
+            <button type="submit">Track</button>
+        </form>
+    </div>
+</body>
+
+</html>

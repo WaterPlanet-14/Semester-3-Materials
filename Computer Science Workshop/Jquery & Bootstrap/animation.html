@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Animation</title>
+    <script
+        src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+        crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("div").animate({height: 300}, 3000);
+                $("div").animate({width: 300}, 3000);
+            });
+            $("#stop").click(function(){
+                $("div").stop();
+            });
+        });
+    </script>
+</head>
+<body>
+    <button>Start Animation</button>
+    <button id="stop">Stop Current Animation</button>
+    <p>Animation Started</p>
+    <div style="background-color:rgb(115, 255, 236);height:100px;width: 150px;position:absolute;">Hey There!!!</div>
+</body>
+</html>

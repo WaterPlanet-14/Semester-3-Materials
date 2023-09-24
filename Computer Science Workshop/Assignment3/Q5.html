@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("h1").dblclick(function () {
+                $("h1").alert("You Double Clicked this line");
+            });
+            $(".a1").mouseenter(function () {
+                alert("Your cursor touched the HTML elements.");
+            });
+            $("#par").mouseleave(function () {
+                alert("You left the paragraph element!");
+            });
+            $("#a").click(function () { //This captures the click event on element with id “a”
+                $("p").hide(2500); //This hides all the elements p
+            });
+            $("#b").click(function () {//This captures the click event on element with id “b”
+                $("p").show(2500); //This shows all the elements p
+            });
+            $("#field1").blur(function () {
+                alert("Field 1 loses focus");
+            });
+            $("h4").click(function () {
+                $(".hd").fadeOut(000);
+            });
+            $("button").click(function(){
+		$("#1").fadeIn(1000);
+        });
+    });
+    </script>
+</head>
+
+<body>
+    <h1>First Heading</h1>
+    <h1 class="a1">Example of Mouseenter</h1>
+    <p class="a">Take the cursor to the HTML element.</p>
+    <p id="par">Take the cursor to the HTML element.</p>
+    <p>I'm Gone and I'm Back.</p>
+    <button id="a">Disappear</button>
+    <button id="b">Appear</button>
+    <div id="1" style="width:40px;height:60px;display:none;background-color:brown;">
+    </div>
+</body>

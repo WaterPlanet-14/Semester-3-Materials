@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("h4").click(function () {
+                $(".hd").fadeOut(2000);
+            });
+            $("p").dblclick(function () {
+                $(".par").fadeOut(2000);
+            })
+        });
+    </script>
+</head>
+
+<body>
+    <h4 class="hd">This is the first heading which is soon to be turned green!</h4>
+    <h4>This is the second heading which is going to remain the same!</h4>
+    <p class="par">Double click me and say Goodbye!!!!</p>
+    <p>Hello</p>
+</body>
+
+</html>

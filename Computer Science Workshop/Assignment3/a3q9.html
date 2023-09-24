@@ -1,0 +1,326 @@
+<html>
+
+<head>
+    <title>Rock, Paper, Scissor Game</title>
+    <style>
+        body {
+            font-family: monospace;
+            font-size: 20px;
+            text-align: center;
+            background: black;
+            color: whitesmoke;
+            margin: 3em;
+        }
+
+
+        strong {
+            text-decoration: underline;
+        }
+
+        button {
+            background: lime;
+            color: black;
+            border: none;
+            padding: 10px 15px;
+            font-size: 1.2em;
+            font-family: monospace;
+            font-weight: bold;
+        }
+
+        button:active {
+            background: green;
+        }
+
+        .clicked {
+            background: blue;
+        }
+
+        .scoreboard {
+            width: 14em;
+            margin: auto;
+            border: 1px solid lime;
+
+        }
+
+        .scoreboard h2 {
+            border-bottom: 1px solid lime;
+            margin: 0;
+            padding: 10px;
+        }
+
+        .scoreboard table {
+            margin: 10px auto;
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .scoreboard th,
+        .scoreboard td {
+            text-align: center;
+        }
+
+        .scoreboard td {
+            font-size: 3em;
+            padding: 0 20px;
+        }
+
+        #status {
+            margin-top: 20px;
+        }
+
+        .highlight {
+            color:red ;
+            font-weight: bold;
+        }
+
+        #popup {
+            display: none;
+            position: fixed;
+            color: black;
+            left: 15%;
+            top: 35%;
+            padding: 40px;
+            background: lime;
+            z-index: 10;
+
+        }
+
+        #tie {
+            display: none;
+            position: fixed;
+            color: black;
+            left: 65%;
+            top: 35%;
+            padding: 40px;
+            background: yellow;
+            z-index: 11;
+
+        }
+    </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="content_container">
+        <h1>Rock, Paper, or Scissors?</h1>
+
+        <p>A steam-powered bot has challenged you to a game. <strong>Rock</strong> beats <strong>scissors<strong>,
+            <strong>scissors</strong> beats <strong>paper</strong>, and <strong>paper</strong> beats
+            <strong>rock</strong>.</p>
+
+        <div class="scoreboard">
+            <h2>Scoreboard</h2>
+            <table>
+                <tbody>
+                    <tr>
+                        <td id="humanScore">0</td>
+                        <td id="computerScore">0</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>You</th>
+                        <th>Bot</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <h2>Choose Wisely</h2>
+
+        <button id="rock">Rock</button>
+
+        <button id="paper">Paper</button>
+
+        <button id="scissors">Scissors</button>
+
+        <div id="tie">It's a tie</div>
+
+        <div id="popup"></div>
+
+
+        <div id="status"></div>
+
+    </div>
+</body>
+
+</html>
+
+<script src="jquery-3.6.1.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+        var humanScores = new Array;
+        var botScores = new Array;
+        var humanScore = 0;
+        var botScore = 0;
+
+        $("button").click(function () {
+
+            //set the user choice based on the button
+            var userChoice = $(this).attr("id");
+
+            //adds some color changing so people can see what they chose
+            $("#" + userChoice).addClass("clicked");
+            $("#" + userChoice).mouseleave(function () {
+                $(this).removeClass("clicked")
+            })
+
+
+            // set the botchoice to a valued based on a math rand
+            var botChoice = "rock";
+            var botGenerator = Math.floor(Math.random() * 3) + 1;
+            switch (botGenerator) {
+                case (1):
+                    var botChoice = "rock";
+                    break;
+                case (2):
+                    var botChoice = "paper";
+                    break;
+                case (3):
+                    var botChoice = "scissors";
+                    break;
+            };
+
+            $("#popup").fadeIn("slow");
+            $("#popup").html("Computer chose " + botChoice + " !");
+            $("#popup").click(function () {
+                $("#popup").fadeOut("slow");
+            });
+
+            //check that both variables returned	
+            console.log(userChoice);
+            console.log(botChoice);
+
+            // compare the options
+            // set the score variables equal to variables
+            var botWin = 0;
+            var humanWin = 0;
+
+            if (userChoice === "rock") {
+                if (botChoice === "rock") {
+                    $("#tie").fadeIn(5000).fadeOut("slow");
+                    botWin = 0;
+                    humanWin = 0;
+                }
+                else if (botChoice === "paper") {
+                    botWin = 1;
+                    humanWin = 0;
+                }
+                else {
+                    botWin = 0;
+                    humanWin = 1;
+                }
+            }
+            else if (userChoice === "paper") {
+                if (botChoice === "paper") {
+                    $("#tie").fadeIn(2000).fadeOut("slow");
+                    botWin = 0;
+                    humanWin = 0;
+
+                }
+                else if (botChoice === "scissors") {
+                    botWin = 1;
+                    humanWin = 0;
+
+                }
+                else {
+                    botWin = 0;
+                    humanWin = 1;
+
+                }
+            }
+
+            else {
+                if (botChoice === "scissors") {
+                    $("#tie").fadeIn(2000).fadeOut("slow");
+                    botWin = 0;
+                    humanWin = 0;
+
+                }
+                else if (botChoice === "rock") {
+                    botWin = 1;
+                    humanWin = 0;
+
+                }
+                else {
+                    botWin = 0;
+                    humanWin = 1;
+
+                }
+
+            };
+
+            // keeping score score
+            console.log(botWin);
+            console.log(humanWin);
+
+            //adding scores to an array
+            var addScores = function (botWin, humanWin) {
+                botScores.push(botWin);
+                humanScores.push(humanWin);
+            }
+
+            addScores(botWin, humanWin);
+
+            console.log(botScores);
+            console.log(humanScores);
+
+            console.log(botScore);
+            console.log(humanScore);
+
+            //adds new scores to array, think I could have done this in a much 
+            //simpler way using an array function
+            var sumScore = function (array1, array2) {
+                for (var i = botScores.length - 1; i < botScores.length; i++) {
+                    var botPoint = botScores[i];
+                    var humanPoint = humanScores[i];
+                    botScore = botScore + botPoint;
+                    humanScore = humanScore + humanPoint;
+                }
+            };
+
+            sumScore();
+
+            console.log(botScore);
+            console.log(humanScore);
+
+            $("#humanScore").each(function () {
+                $(this).html(humanScore);
+
+            })
+            $("#computerScore").each(function () {
+                $(this).html(botScore);
+            })
+
+
+            var highlightWinner = function (botScore, humanScore) {
+                if (botScore > humanScore) {
+                    $("#status").html("The computer is winning!");
+                    $("#computerScore").addClass("highlight");
+                    $("#humanScore").removeClass("highlight");
+                }
+                else if (botScore < humanScore) {
+                    $("#status").html("Congrats you are winning!");
+                    $("#humanScore").addClass("highlight");
+                    $("#computerScore").removeClass("highlight");
+                }
+                else {
+                    $("#status").html("You are tied!");
+                    $("#humanScore").removeClass("highlight");
+                    $("#computerScore").removeClass("highlight");
+                }
+
+            }
+
+            highlightWinner(botScore, humanScore);
+
+        });
+
+
+    });
+</script>
+</body>
+
+</html>

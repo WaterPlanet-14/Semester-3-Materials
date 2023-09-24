@@ -1,0 +1,139 @@
+<html lang="en"> 
+<head> 
+ <meta charset="UTF-8"> 
+ <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+ <title>Q10</title> 
+<script 
+src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+ <script> 
+ $(document).ready(function(){ 
+ $("#flip").click(function(){ 
+ $("#panel").slideDown("slow"); 
+ });}); 
+ $(document).ready(function(){ 
+ $("#fl").click(function(){ 
+ $("#pa").slideDown("slow"); 
+ });}); 
+ $(document).ready(function(){ 
+ $("#fli").click(function(){ 
+ $("#pan").slideDown("slow"); 
+ }); 
+ }); 
+ function validateForm() { 
+ let x = document.forms["con"]["fname"].value; 
+ if (x == "") { 
+ alert("Name must be filled out"); 
+ return false; 
+ } 
+} 
+</script> 
+ </script> 
+ <style> 
+ *{
+ margin: 0; 
+ background-color: rgb(52, 56, 56); 
+
+ } 
+ #LMA{ 
+ color: white; 
+ } 
+ li{ 
+ margin: 15px; 
+ display: inline-flex; 
+ } 
+ a{
+ color: rgb(255, 255, 255); 
+ text-decoration: none; 
+ } 
+ a:hover{ 
+ color: rgb(255, 255, 255); 
+ text-decoration: none; 
+ letter-spacing: 5px; 
+ transition: all 0.3s ease-in-out; 
+ } 
+ img{ 
+ width:100%; 
+ } 
+ #panel, #flip { 
+ padding: 5px; 
+ text-align: center; 
+ background-color: #000000; 
+ border: solid 1px #c3c3c3; 
+} 
+#panel { 
+ padding: 50px; 
+ display: none; 
+} 
+#pa, #fl { 
+ padding: 5px; 
+ text-align: center; 
+ background-color: #000000; 
+ border: solid 1px #c3c3c3; 
+} 
+#pa{ 
+ padding: 50px; 
+ display: none; 
+} 
+#pan, #fli { 
+ padding: 5px; 
+ text-align: center; 
+ background-color: #000000; 
+ border: solid 1px #c3c3c3; 
+} 
+#pan { 
+ padding: 50px; 
+ display: none; 
+} 
+#co{ 
+ color: rgb(255, 255, 255); 
+ width: 300px; 
+ text-align: center; 
+ margin: auto; 
+ margin-top: 100px; 
+} 
+ </style> 
+</head> 
+<body> 
+ <nav> 
+ <ul> 
+ <li><a href="#">Home</a></li> 
+ <li><a href="#co">Contact</a></li> 
+ <li><a href="#LMA">About</a></li> 
+ </ul> 
+ </nav> 
+<img src="e5f7c75c6d5df693ee782a2cc949c549.jpg" alt=""> 
+<div id="LMA"> 
+ <h1>About</h1> 
+<div id="flip">ANSUMAAN PANDA +</div> 
+<div 
+id="panel"><ul><li>PROGRAMMER</li><li>PLAYER</li><li>STUDENT</li></ul></di
+v>
+<div id="fl">ANSUMAAN PANDA +</div> 
+<div id="pa"><ul><li>CEO</li><li>PROFESSIONAL 
+AUDIENCE</li><li>STUDENT</li></ul></div> 
+<div id="fli">ANURAG PANDA</div> 
+<div id="pan"><ul><li>CODER</li><li>PLAYER</li><li>STUDENT</li></ul></div> 
+</div> 
+<div id="co"> 
+ <h1>Contact</h1> 
+ <form name= "con" action="" onsubmit="return validateForm()"> 
+ <table> 
+ <tr> 
+ <th><label for="Email">Email</label></th> 
+ <th><input type="email" ></th> 
+ </tr> 
+ <tr> 
+ <th><label for="name">Name</label></th> 
+ <th> <input type="text" name="fname"></th> 
+ </tr> 
+ <tr> 
+ <td></td> 
+ <td><input type="submit" value="Submit"></td> 
+ </tr> 
+ 
+ </table> 
+ </form> 
+</div> 
+</body> 
+</html>

@@ -1,0 +1,57 @@
+<html>
+<head>
+    <title>Question 4</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+</head>
+<body>
+    <canvas id="myChartPie" style="width: 100%; max-width: 1000px;"></canvas>
+    <canvas id="myChartBar" style="width: 100%; max-width: 1000px;"></canvas>
+    <script>
+        var xValues = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday",
+            "Saturday", "Sunday"];
+        var yValues = [29.85, 29, 28, 26.95, 30, 29, 28];
+        var barColors = [
+            "#b91d47",
+            "#00aba9",
+            "#2b5797",
+            "#e8c3b9",
+            "#1e7145",
+            "#596469",
+            "purple"
+        ];
+        new Chart("myChartPie", {
+            type: "pie",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: "Last 7 days weather Data in  ℃"
+                }
+            }
+        });
+        new Chart("myChartBar", {
+            type: "bar",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues
+                }]
+            },
+            options: {
+                legend: { display: false },
+                title: {
+                    display: true,
+                    text: "Last 7 days weather Data in  ℃"
+                }
+            }
+        });
+    </script>
+</body>
+</html>

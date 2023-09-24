@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-
+scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>A3Q8</title>
+    <script>
+        $(document).ready(function () {
+            $("#myInput").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value)
+                        > -1)
+                });
+            });
+        }); 
+    </script>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #000000;
+            text-align: CENTER;
+            padding: 8px;
+        }
+
+       tbody tr:nth-child(odd) {
+            background-color: rgb(255, 196, 0);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 style="color:rgb(0, 0, 0) ;">JOB LISTINGS</h1>
+    <input id="myInput" type="text" placeholder="Search.." style="border:3px solid skyblue ;width:300px">
+    <br><br>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Job Category</th>
+                <th>Job listing</th>
+                <th>Location</th>
+            </tr>
+        </thead>
+        <tbody id="myTable">
+            <tr>
+                <td>FRONT-END DEVELOPER</td>
+                <td>SD1</td>
+                <td>DELHI</td>
+            </tr>
+            <tr>
+                <td>BACK-END DEVELOPER</td>
+                <td>SD2</td>
+                <td>BHUBANESWER</td>
+            </tr>
+            <tr>
+                <td>DATA ANALIST</td>
+                <td>SD3</td>
+                <td>GOA</td>
+            </tr>
+            <tr>
+                <td>ML ENGINEER</td>
+                <td>CEO</td>
+                <td>DUBAI</td>
+            </tr>
+            
+            <tr>
+                <td>DATA SCIENTIST</td>
+                <td>CEO</td>
+                <td>BERHAMPUR</td>
+            </tr>
+           
+            <tr>
+                <td>CLOUD COMPUTING</td>
+                <td>CEO</td>
+                <td>PURI</td>
+            </tr>
+            
+        </tbody>
+    </table>
+
+</body>
+
+</html>

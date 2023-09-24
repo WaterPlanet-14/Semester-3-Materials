@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Changing color, adding rows, deleting html element of text on button click</title>
+</head>
+<body>
+    <div>
+        <h2>
+            Add Rows To Table
+        </h2>
+        <table>
+            <tr>
+                <td>This is a row</td>
+            </tr>
+        </table>
+        <button id="row_btn">Add a row</button>
+    </div>
+
+    <div>
+        <h2>
+            Change color on button click
+        </h2>
+        <p id="clr">This is a paragraph that will change its color.</p>
+        <button id="clr_btn">Change color</button>
+    </div>
+
+    <div>
+        <h2>
+            Deleting HTML element
+        </h2>
+        <p id="element">Enter element to be deleted:
+            <input type="text" name="deletetext" id="txt">
+        </p>
+        <button id="del">Delete the element</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    </script>
+
+    <script>
+        $("#row_btn").click(function () {
+            $("div table").append("<tr><td>A row is added!</td></tr>");
+        });
+
+        $("#clr_btn").click(function () {
+            $("#clr").css("color", "blue");
+        });
+
+        $("#del").click(function () {
+            $($("#txt").val()).remove();
+        });
+    </script>
+</body>
+</html>
